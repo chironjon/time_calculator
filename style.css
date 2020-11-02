@@ -1,8 +1,9 @@
-html {
+* {
   box-sizing: border-box;
 }
 
 body {
+  background-color: #106d3f;
   margin: 0;
   border: 1px green solid;
   display: flex;
@@ -10,15 +11,68 @@ body {
   justify-content: center;
 }
 
+/* button {
+  height: 45px;
+  width: 50px;
+} */
+
 .calculator {
-  border: 1px red solid;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid #111;
+  border-radius: 5px;
 }
 
-.buttons {
+.calculator input   {
+  /* reset basic form styles */
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  padding: 20px 10px;
+  width: 100%;
+  border-bottom: 2px solid #111;
+  color: #333;
+  text-align: right;
+  font-size: 40px;
+  border-radius: 0;
 }
 
-.number-pad {
-  display: flex;
-  justify-content: space-between;
-  border: 1px blue solid;
+.button-pad {
+  /* small spacing within our container */
+  padding: 20px;
+
+  /* the grid stuff! */
+  display: grid;
+
+  /* create 4 columns */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  /* add the grid gap */
+  grid-gap: 15px;
+}
+
+.is-zero {
+  grid-column: span 3;
+}
+
+.numpad-button {
+  background: rgba(0, 0, 0, 0.5); /* light background with opacity 50% */
+  border: 1px solid #111; /* black border */
+  padding: 20px;
+  color: #EEE; /* white text */
+  border-radius: 5px; /* rounded corners */
+  font-size: 22px; /* larger fonts */
+  cursor: pointer; /* make it look clickable */
+}
+
+.is-clear   {
+  grid-column: span 2;
+  background: #3572DB;
+}
+
+.is-equals {
+  grid-column: span 2;
+  background: #28D060;
 }
