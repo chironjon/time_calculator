@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  border: 1px green solid;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.calculator {
+  border: 1px red solid;
+}
+
+.number-pad {
+  display: grid;
+  grid-template-columns: 25px 25px 25px;
+  grid-template-rows: 25px 25px 25px 25px;
+  border: 1px blue solid;
+}
