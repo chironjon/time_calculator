@@ -18,9 +18,37 @@ const equalsButton = document.getElementById('equals');
 
 const timeInput = document.getElementById('time-input');
 
+const defaults = {
+  'timeArray': [],
+  'operator': ''
+}
+
+const timeMath = defaults;
+
+const equate = (arr, operator) => {
+  switch (operator) {
+    case "add":
+      console.log("add");
+      break;
+    case "sub":
+      console.log('how');
+      break;
+    case "mult":
+      console.log('how');
+      break;
+    case "div":
+      console.log('how');
+      break;
+    default:
+      timeInput.value = arr[0]
+      console.log('how');
+      return;
+  }
+}
 
 const arrayToTimeString = (arr) => {
   let output = []
+  if(arr.length===0)"00:00:00";
   for (let i = 0; i < arr.length; i++){
     output.push(arr[i])
     if (i % 2 === 1 && i < 5) {
@@ -32,7 +60,7 @@ const arrayToTimeString = (arr) => {
 }
 
 let currentInput = [0,0,0,0,0,0];
-let numArr = ["00:00:00", arrayToTimeString(currentInput)];
+let numArr = defaults.numberArray;
 
 const timeToSeconds = (time) => {
   let hours = parseInt(time.split(':')[0]) * 60 * 60;
@@ -50,23 +78,12 @@ const secondsToTime = (seconds) => {
   return hour + ":" + realmin + ":" + sec;
 }
 
-const add = (arr) => {
-  // console.log(arrayToTimeString(arr));
-  numArr[0] = secondsToTime(timeToSeconds(numArr[0]) + timeToSeconds(arrayToTimeString(arr)));
-  numArr[1] = secondsToTime(timeToSeconds(arrayToTimeString(arr)));
-  console.log(numArr);
-  timeInput.value = numArr[0];
-  // let sum = 0;
-  // for (let i = 0; i < arr.length; i++) {
-  //   sum = sum + timeToSeconds(arr[i])
-  // }
-  // return secondsToTime(sum);
-}
 
-const sub = () => console.log('sub');
-const mult = () => console.log('mult');
-const div = () => console.log('div');
-const clear = () => currentInput = [0,0,0,0,0,0];
+const clear = () => {
+  numArr = defaults.numberArray;
+  timeInput.value = numArr[0]
+  console.log('clear', numArr)
+};
 const equal = () => {
   console.log(arrayToTimeString(currentInput), numArr, currentInput);
 }
@@ -142,10 +159,10 @@ numSeven.addEventListener('click', seven);
 numEight.addEventListener('click', eight);
 numNine.addEventListener('click', nine);
 numZero.addEventListener('click', zero);
-addButton.addEventListener('click', () => add(currentInput));
-subButton.addEventListener('click', () => sub(currentInput));
-divButton.addEventListener('click', () => div(currentInput));
-multButton.addEventListener('click', () => mult(currentInput));
+addButton.addEventListener('click', () => equate(currentInput));
+subButton.addEventListener('click', () => equate(currentInput));
+divButton.addEventListener('click', () => equate(currentInput));
+multButton.addEventListener('click', () => equate(currentInput));
 clearButton.addEventListener('click', clear);
 equalsButton.addEventListener('click', equal);
 
