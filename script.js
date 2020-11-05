@@ -1,5 +1,9 @@
 const allButtons = document.getElementsByClassName('numpad-button');
 
+const allDisplays = document.getElementsByClassName('time-display');
+for(let i = 0; i < allDisplays.length; i++) {
+  console.log(allDisplays[i].id)
+}
 const hourInput = document.getElementById('hour-display');
 const minInput = document.getElementById('min-display');
 const secInput = document.getElementById('sec-display');
@@ -10,67 +14,62 @@ const times = {
 
 const buttonPressed = {
   'type': '',
+  'unit': '',
   'value': ''
 }
 
-// const timeMath = buttonPressed;
+console.log("value ->", hourInput.value + ":" + minInput.value + ":" + secInput.value);
 
-console.log("value ->", hourInput.value);
 
-const equate = (timeObj, button) => {
-  console.log(timeObj, button)
+
+const equate = (timeObj, pressedID, pressedValue) => {
+  // console.log(pressedID.startsWith("ones"), pressedID.endsWith("Hour"), parseInt(pressedValue));
+  console.log(pressedID.startsWith("ones")||pressedID.startsWith("five")||pressedID.startsWith("fift")||pressedID.startsWith("none"))
+  switch (pressedID) {
+    
+    case "add":
+
+      console.log("add");
+      break;
+    case "sub":
+      console.log('sub');
+      break;
+    case "mult":
+      console.log('mult');
+      break;
+    case "div":
+      console.log('div');
+      break;
+    case "equals":
+    case "clear":
+      hourInput.value = timeObj[0][0];
+      // minInput.value = timeObj[0][1];
+      // secInput.value = timeObj[0][2];
+      console.log('clear');
+      break;
+    default:
+      // let 
+      // console.log(parseInt(pressedValue))
+      if(pressedID.startsWith("ones"|"five")){
+console.log('win')
+      }
+      
+  //     hourInput.value += parseInt(pressedValue) + parseInt(hourInput.value)
+  //     break;
+  // }
+  // timeObj[0][0] === hourInput.value;
+}
 }
 
 for(let i = 0; i < allButtons.length; i++){
   console.log(allButtons[i]);
   allButtons[i].addEventListener('click', () => {
-    const {type, value} = buttonPressed;
-
-    equate(times, buttonPressed)
+    // let {type} = buttonPressed;
+    // type = allButtons[i].id;
+    equate(times, allButtons[i].id, allButtons[i].innerHTML)
   });
 }
-  // switch (obj['type']) {
-  //   case "add":
-  //     console.log("add", timeInput.value);
-  //     break;
-  //   case "sub":
-  //     console.log('sub');
-  //     break;
-  //   case "mult":
-  //     console.log('mult');
-  //     break;
-  //   case "div":
-  //     console.log('div');
-  //     break;
-  //   case "equals":
-  //   case "clear":
-  //   default:
-  //     timeInput.value = obj.timeArray[0]
-  //     console.log('how');
-  //     return;
-  // }
-  // switch (obj['buttonPressed']){
-  //   case 0:
-  //     break;
-  //   case 1:
-  //     break;
-  //   case 2:
-  //     break;
-  //   case 3:
-  //     break;
-  //   case 4:
-  //     break;
-  //   case 5:
-  //     break;
-  //   case 6:
-  //     break;
-  //   case 7:
-  //     break;
-  //   case 8:
-  //     break;
-  //   case 9:
-  //     break;
-  // }
+
 
 
 // const arrayToTimeString = (arr) => {
@@ -104,15 +103,6 @@ for(let i = 0; i < allButtons.length; i++){
 // }
 
 
-// const clear = () => {
-//   // numArr = defaults.numberArray;
-//   timeInput.value = numArr[0]
-//   console.log('clear', numArr)
-// };
-
-// const equal = () => {
-//   console.log(arrayToTimeString(currentInput), numArr, currentInput);
-// };
 
 // const one = () => {
 //   console.log('1');
@@ -120,14 +110,3 @@ for(let i = 0; i < allButtons.length; i++){
 //   currentInput.push(1);
 //   timeInput.value = arrayToTimeString(currentInput);
 // };
-
-
-
-// numOne.addEventListener('click', () => one());
-// addButton.addEventListener('click', () => {
-//   timeMath.operator = "add"
-//   equate(timeMath)
-// });
-
-
-// console.log(add(["00:02:35", "00:07:47", "0:2:2"]))
