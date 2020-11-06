@@ -83,6 +83,10 @@ input[type=number] {
   margin: 5px;
 }
 
+/* .time-input .numpad-button {
+  background: #28D0609a;
+} */
+
 .is-zero {
   grid-column: span 3;
   background: #db35359a;
