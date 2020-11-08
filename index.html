@@ -9,12 +9,25 @@
   <body>
     <!-- Calculator -->
     <div class="calculator" id="calculator">
-      <div class="time-displays" id="time-displays">
-        <input class="time-display" id="hour-display" type="text">
-        <h1 class="time-display">:</h1>
-        <input class="time-display" id="min-display" type="text">
-        <h1 class="time-display">:</h1>
-        <input class="time-display" id="sec-display" type="text">
+      <!-- display -->
+      <div class="displays" id="equation-display-container">
+        <input type="text" class="equation-display" id="equation-display" disabled>
+      </div>
+      <div class="displays" id="answer-displays">
+        <input type="text" class="answer-display" id="answer-display" disabled>
+      </div>
+      <!-- input -->
+      <div class="displays" id="time-displays">
+        <input class="display" id="hour-display" type="text" disabled>
+        <h1 class="display">:</h1>
+        <input class="display" id="min-display" type="text" disabled>
+        <h1 class="display">:</h1>
+        <input class="display" id="sec-display" type="text" disabled>
+      </div>
+      <div class="labels" id="display-labels">
+        <p>Hours</p>
+        <p>Minutes</p>
+        <p>Seconds</p>
       </div>
       
       <!-- buttons -->
@@ -40,15 +53,10 @@
           <button class="numpad-button is-zero" id="nonSc">0</button>
         </div>
       </div>
-      <div class="display-labels" id="display-labels">
-        <p>Hours</p>
-        <p>Minutes</p>
-        <p>Seconds</p>
-      </div>
       <div class="operators" id="operators">
         <button class="numpad-button is-clear" id="clr">C</button>
-        <button class="numpad-button" id="div">/</button>
-        <button class="numpad-button" id="mul">*</button>
+        <!-- <button class="numpad-button" id="div" disabled>/</button> -->
+        <!-- <button class="numpad-button" id="mul" disabled>*</button> -->
         <button class="numpad-button" id="sub">-</button>
         <button class="numpad-button" id="add">+</button>
         <button class="numpad-button is-equals" id="equ">=</button>

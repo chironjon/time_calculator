@@ -13,11 +13,12 @@ body {
 .calculator {
   min-width: 540px;
   width: 540px;
-  height: 235px;
+  height: 400px;
   margin: auto;
   padding: 2px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   border: 3px solid #ffd8a5;
   border-radius: 10px;
 }
@@ -48,7 +49,7 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-.time-displays, .time-inputs, .operators, .display-labels {
+.displays, .time-inputs, .operators, .labels {
   display: flex;
 }
 
@@ -59,10 +60,10 @@ input[type=number] {
   grid-gap: 8px;
 }
 
-.display-labels p {
+.labels p {
   color: #ffffff;
   padding: 5px;
-  margin: 5px 30px;
+  margin: 0px 30px;
   width: 100%;
   text-align: center;
   border: 1px solid #ffd8a5;
