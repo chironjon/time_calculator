@@ -10,9 +10,13 @@ body {
   color: #ffd8a5;
 }
 
+/* div {
+  border: yellow solid 1px;
+} */
+
 .calculator {
-  min-width: 540px;
-  width: 540px;
+  min-width: 300px;
+  width: 300px;
   height: 400px;
   margin: auto;
   padding: 2px;
@@ -34,7 +38,7 @@ input {
   border: 1px solid #ffd8a5;
   border-radius: 5px;
   color: #ffffff;
-  font-size: 3rem;
+  /* font-size: 3rem; */
   text-align: center;
 }
 
@@ -42,60 +46,55 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-.displays, .time-inputs, .operators, .labels {
+.display, .inputs, .operators {
   display: flex;
+}
+
+.inputs {
+  flex-direction: row;
+}
+
+#equation-display {
+  /* position: fixed; */
+  right: 50;
 }
 
 .time-input {
   width: 100%;
-  padding: 5px;
+  padding-right: 5px;
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.labels p {
-  color: #ffffff;
-  padding: 5px;
-  margin: 0px 30px;
-  width: 100%;
-  text-align: center;
-  border: 1px solid #ffd8a5;
-  border-radius: 5px;
+.operators {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-rows: 1fr 1fr 2fr;
 }
 
 .numpad-button {
   background: #2719704b;
   border: none;
-  padding: 5px 0;
+  padding: 15px;
   color: #ffd8a5;
   border-radius: 5px;
   width: 100%;
   cursor: pointer;
 }
 
-.operators .numpad-button {
-  margin: 5px;
-}
-
-/* .time-input .numpad-button {
-  background: #28D0609a;
-} */
-
-.is-zero {
-  grid-column: span 3;
-  background: #db35359a;
-}
 .is-clear   {
+  grid-column: span 2;
   background: #3572DB9a;
 }
 
 .is-equals {
+  grid-row: span 2;
   background: #28D0609a;
 }
