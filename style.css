@@ -27,21 +27,6 @@ body {
   border-radius: 10px;
 }
 
-input {
-  background: none;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  
-  padding: 0px;
-  width: 100%;
-  border: 1px solid #ffd8a5;
-  border-radius: 5px;
-  color: #ffffff;
-  /* font-size: 3rem; */
-  text-align: center;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -54,15 +39,36 @@ input[type=number] {
 
 .display, .inputs, .operators {
   display: flex;
+  position: relative;
 }
 
 .inputs {
   flex-direction: row;
 }
 
+.input-display {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0px;
+  width: 100%;
+  border: 1px solid #ffd8a5;
+  border-radius: 5px;
+  color: #ffffff;
+  /* font-size: 3rem; */
+  text-align: center;
+}
+
 #equation-display {
-  /* position: fixed; */
-  right: 50;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  border: none;
+}
+
+#answer-display, #terms-display {
+  font-size: 3rem;
 }
 
 .time-input {
